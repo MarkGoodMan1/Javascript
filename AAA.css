@@ -1,0 +1,45 @@
+/* Quy tắc cho body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+  
+  /* Quy tắc cho header */
+  header {
+    background-color: #4CAF50; /* xanh lá dịu */
+  }
+  
+  /* Quy tắc cho nav */
+  nav {
+    background-color: #333; /* xám đậm */
+  }
+  
+  /* Quy tắc cho main */
+  main {
+    background-color: #f4f4f4; /* xám nhạt */
+    font-size: 18px;
+  }
+  
+  /* Quy tắc cho footer */
+  footer {
+    background-color:green; /* đen nhạt */
+  }
+  
+  /* Quy tắc cho li */
+  li {
+    display: inline-block;
+    width: 150px;
+  }
+  
+  /* Quy tắc cho h1 */
+  h1 {
+    text-align: center;
+    font-style: italic;
+    color: #2c3e50; /* xanh đậm */
+  }
+  
+  /* Quy tắc cho p */
+  p {
+    line-height: 1.6;
+  }
+  

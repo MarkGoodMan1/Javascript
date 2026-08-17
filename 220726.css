@@ -1,0 +1,31 @@
+div {
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 772px) {
+  div {
+    width: 45%;
+    display: inline-block;   
+    margin: 2%;              
+    vertical-align: top;      
+  }
+
+  img {
+    max-height: 30vh;       
+    width: auto;
+  }
+}
+@media screen and (min-width: 998px) {
+  div {
+    width: 30%;
+    display: inline-block;
+    margin: 1.5%;
+    vertical-align: top;
+  }
+}

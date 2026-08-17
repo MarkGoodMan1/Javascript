@@ -1,0 +1,47 @@
+/* Mobile-first: default styles */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/* Tablet view */
+@media (min-width: 772px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+  img {
+    border-radius: 50%;
+  }
+  .container div:last-child {
+    grid-column: span 2;
+  }
+}
+
+/* Desktop view */
+@media (min-width: 992px) {
+  .container div:nth-child(3n) {
+    grid-column: span 2;
+  }
+  img {
+    border-radius: 0;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background-color: #222;
+    color: #ffd700; /* vàng */
+    border: 1px solid #000;
+  }
+}

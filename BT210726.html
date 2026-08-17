@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thư viện ảnh tương tác</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: black;  
+      color: white;
+    }
+    figure {
+      display: inline-block;
+      margin: 10px;
+      border: 2px solid #ccc;
+      padding: 5px;
+     background-color: #222;
+    }
+    figcaption {
+      text-align: center;
+      margin-top: 5px;
+    }
+    figure:focus {
+      outline: 3px solid green;
+    }
+  </style>
+</head>
+<body onload="initPage()">
+
+  <h1>Thư viện ảnh của tôi</h1>
+
+  <div id="gallery">
+    <figure>
+      <img src="nuinon.png" alt="Phong cảnh núi non xanh tươi">
+      <figcaption>Núi non</figcaption>
+    </figure>
+    <figure>
+      <img src="bienxanh.png" alt="Bãi biển với cát trắng và sóng biển">
+      <figcaption>Bãi biển</figcaption>
+    </figure>
+    <figure>
+      <img src="thanhpho.png" alt="Thành phố về đêm với ánh đèn lung linh">
+      <figcaption>Thành phố đêm</figcaption>
+    </figure>
+    <figure>
+      <img src="donghoa.png" alt="Cánh đồng hoa hướng dương rực rỡ">
+      <figcaption>Hoa hướng dương</figcaption>
+    </figure>
+    <figure>
+      <img src="muathu.png" alt="Rừng cây mùa thu với lá vàng">
+      <figcaption>Rừng mùa thu</figcaption>
+    </figure>
+    <figure>
+      <img src="thacnuoc.png" alt="Thác nước chảy mạnh mẽ giữa núi rừng">
+      <figcaption>Thác nước</figcaption>
+    </figure>
+  </div>
+
+  <script>
+    function initPage() {
+      console.log("Trang đã tải xong!");
+      addTabIndex();
+      addEventListeners();
+    }
+    function addTabIndex() {
+      const figures = document.querySelectorAll("figure");
+      for (let i = 0; i < figures.length; i++) {
+        figures[i].setAttribute("tabindex", i + 1);
+        console.log("Đã thêm tabindex cho figure " + (i+1));
+      }
+    }
+    function addEventListeners() {
+      const figures = document.querySelectorAll("figure");
+      figures.forEach(fig => {
+        fig.addEventListener("mouseover", () => {
+          console.log("Sự kiện mouseover trên figure");
+          fig.style.borderColor = "blue";
+        });
+        fig.addEventListener("mouseleave", () => {
+          console.log("Sự kiện mouseleave trên figure");
+          fig.style.borderColor = "#ccc";
+        });
+        fig.addEventListener("focus", () => {
+          console.log("Sự kiện focus trên figure");
+          fig.style.borderColor = "green";
+        });
+        fig.addEventListener("blur", () => {
+          console.log("Sự kiện blur trên figure");
+          fig.style.borderColor = "#ccc";
+        });
+        fig.addEventListener("keydown", (event) => {
+          console.log("Sự kiện keydown: " + event.key);
+          if (event.key === "Enter") {
+            alert("Bạn đã chọn: " + fig.querySelector("figcaption").innerText);
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
